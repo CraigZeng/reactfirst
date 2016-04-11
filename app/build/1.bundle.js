@@ -1,6 +1,6 @@
 webpackJsonp([1,2],{
 
-/***/ 219:
+/***/ 294:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11,7 +11,7 @@ webpackJsonp([1,2],{
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _react = __webpack_require__(1);
+	var _react = __webpack_require__(77);
 
 	var _react2 = _interopRequireDefault(_react);
 
@@ -33,6 +33,11 @@ webpackJsonp([1,2],{
 	    }
 
 	    _createClass(About, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            console.log('+++');
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -47,18 +52,6 @@ webpackJsonp([1,2],{
 	}(_react.Component);
 
 	exports.default = About;
-
-	// var React = require('react');
-
-	// var App = React.createClass({
-	//   render: function() {
-	//     return (
-	//       <div>about</div>
-	//     )
-	//   }
-	// });
-
-	// module.exports = App;
 
 /***/ }
 
