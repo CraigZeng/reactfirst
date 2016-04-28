@@ -1,6 +1,6 @@
 webpackJsonp([1,2],{
 
-/***/ 294:
+/***/ 297:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43,7 +43,7 @@ webpackJsonp([1,2],{
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                'about'
+	                'aboutx'
 	            );
 	        }
 	    }]);
