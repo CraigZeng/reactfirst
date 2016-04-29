@@ -1,4 +1,4 @@
-var config;
+let config;
 
 if (__DEV__) {
     config = {

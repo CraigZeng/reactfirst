@@ -4,6 +4,7 @@ class About extends Component {
   componentDidMount() {
     console.log('+++');
   }
+
   render() {
     return (
       <div>aboutx</div>

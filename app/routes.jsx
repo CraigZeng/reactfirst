@@ -6,12 +6,13 @@ import {
 
 import LayoutView from './views/common/Layout';
 import Home from './views/home';
+import Search from './views/search';
 
 /* eslint-disable */
 // const routes = {
 //   path: '/',
 //   component: LayoutView,
-//   indexRoute: { component: Home },
+//   indexRoute: { component: Search },
 //   childRoutes: [
 //     {
 //       path: '/about',
@@ -25,13 +26,17 @@ import Home from './views/home';
 //       path: '/home',
 //       component: Home,
 //     },
+//     {
+//       path: '/search',
+//       component: Search,
+//     },
 //   ],
 // };
 /* eslint-enable */
 
 const routes = (
   <Route path="/" component={LayoutView}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={Search} />
     <Route path="/home" component={Home} />
     <Route
       path="/about"
@@ -43,6 +48,7 @@ const routes = (
         }
       }
     />
+    <Route path="/search" component={Search} />
   </Route>
 );
 
