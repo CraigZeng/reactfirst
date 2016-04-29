@@ -7,21 +7,27 @@ import {
 import LayoutView from './views/common/Layout';
 import Home from './views/home';
 
-// let routes = {
-//     path: '/',
-//     component: LayoutView,
-//     childRoutes: [
-//         {
-//             path: '/about',
-//             getComponent: function(location, callback) {
-//                 require.ensure([], function(require) {
-//                     callback(null, require('./views/about').default);
-//                 });
-//             }
-//         },
-//         { path: '/home', component: Home }
-//     ]
+/* eslint-disable */
+// const routes = {
+//   path: '/',
+//   component: LayoutView,
+//   indexRoute: { component: Home },
+//   childRoutes: [
+//     {
+//       path: '/about',
+//       getComponent: (location, callback) => {
+//         require.ensure([], (require) => {
+//           callback(null, require('./views/about').default);
+//         });
+//       },
+//     },
+//     {
+//       path: '/home',
+//       component: Home,
+//     },
+//   ],
 // };
+/* eslint-enable */
 
 const routes = (
   <Route path="/" component={LayoutView}>
