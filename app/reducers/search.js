@@ -1,3 +1,4 @@
+import undoable, { distinctState } from 'redux-undo';
 import { SEARCH_COMPANY } from '../actions';
 
 const initedState = {
@@ -17,4 +18,9 @@ function search(state = initedState, action) {
 }
 
 
-export default search;
+const undoSearch = undoable(search, {
+  filter: distinctState(),
+});
+
+
+export default undoSearch;

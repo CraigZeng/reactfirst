@@ -23,7 +23,8 @@
     "react-router": "^2.4.0",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.0.1"
+    "redux-thunk": "^2.0.1",
+    "redux-undo": "^0.6.1"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",
