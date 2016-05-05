@@ -6,7 +6,7 @@ import {
 
 import LayoutView from './views/common/Layout';
 import Home from './views/home';
-import Search from './views/search';
+import Search from './containers/search';
 
 /* eslint-disable */
 // const routes = {

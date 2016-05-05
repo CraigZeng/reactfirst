@@ -13,7 +13,7 @@ http.createServer((req, res) => {
     if (!/\.js$/.test(req.url)) {
       res.setHeader('content-type', 'text/html');
       Router.match(
-        { routes, location: req.url },
+        { routes: routes.default, location: req.url },
         (err, redirectLocation, renderProps) => {
           if (renderProps) {
             const html = fs.readFileSync(path.join(__dirname, '../index.html'));
