@@ -7,12 +7,12 @@ import searchApp from '../reducers';
 
 const loggerMiddleware = createLogger();
 
-const store = createStore(
-  searchApp,
-  applyMiddleware(
-    thunkMiddleware,
-    loggerMiddleware
-  )
-);
+const createStoreWithMiddleware = applyMiddleware(
+  thunkMiddleware,
+  loggerMiddleware
+)(createStore);
 
-export default store;
+export default function configureStore(initialState) {
+  const store = createStoreWithMiddleware(searchApp, initialState);
+  return store;
+}

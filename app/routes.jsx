@@ -8,6 +8,12 @@ import LayoutView from './views/common/Layout';
 import Home from './views/home';
 import Search from './containers/search';
 
+if (typeof require.ensure === 'undefined') {
+  require.ensure = (a, b) => {
+    b(require);
+  };
+}
+
 /* eslint-disable */
 // const routes = {
 //   path: '/',
