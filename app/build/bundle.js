@@ -7411,9 +7411,12 @@ webpackJsonp([0,2],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var reduxState = {};
+	var store = (0, _store2.default)(reduxState);
+
 	_reactDom2.default.render(_react2.default.createElement(
 	  _reactRedux.Provider,
-	  { store: _store2.default },
+	  { store: store },
 	  _react2.default.createElement(_R2.default, null)
 	), document.getElementById('app'));
 
@@ -29081,6 +29084,7 @@ webpackJsonp([0,2],[
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.default = configureStore;
 
 	var _redux = __webpack_require__(248);
 
@@ -29100,9 +29104,12 @@ webpackJsonp([0,2],[
 
 	var loggerMiddleware = (0, _reduxLogger2.default)();
 
-	var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default, loggerMiddleware));
+	var createStoreWithMiddleware = (0, _redux.applyMiddleware)(_reduxThunk2.default, loggerMiddleware)(_redux.createStore);
 
-	exports.default = store;
+	function configureStore(initialState) {
+	  var store = createStoreWithMiddleware(_reducers2.default, initialState);
+	  return store;
+	}
 
 /***/ },
 /* 268 */
@@ -35660,6 +35667,12 @@ webpackJsonp([0,2],[
 	var _search2 = _interopRequireDefault(_search);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	if (false) {
+	  require.ensure = function (a, b) {
+	    b(require);
+	  };
+	}
 
 	/* eslint-disable */
 	// const routes = {
