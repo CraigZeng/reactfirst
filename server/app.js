@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom/server';
 import configureStore from '../app/store';
 import routes from '../app/routes.jsx';
 
-http.createServer((req, res) => {
+export default http.createServer((req, res) => {
   if (req.url !== '/favicon.ico') {
     if (!/\.js$/.test(req.url)) {
       res.setHeader('content-type', 'text/html');
@@ -24,9 +24,6 @@ http.createServer((req, res) => {
               },
             });
             const html = fs.readFileSync(path.join(__dirname, '../index.html')).toString();
-            
-            //          new Promise((resolve, reject) => route.getComponent(renderProps.location, resolve)
-       
             const content = ReactDOM.renderToString(
               <Provider store={store}>
                 <RouterContext {...renderProps} />
@@ -41,4 +38,4 @@ http.createServer((req, res) => {
       fs.createReadStream(path.join(__dirname, '..', req.url)).pipe(res);
     }
   }
-}).listen(3000);
+});

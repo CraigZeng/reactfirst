@@ -4,7 +4,7 @@
   "description": "learn first react demo",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-register --recursive app/test/",
+    "test": "mocha --compilers js:babel-register --recursive ./__test__/",
     "test:watch": "npm test -- --watch",
     "start": "webpack-dev-server",
     "build": "webpack",
@@ -42,6 +42,8 @@
     "mocha": "^2.4.5",
     "react-hot": "^0.1.0",
     "redux-devtools": "^3.2.0",
+    "sinon": "^1.17.4",
+    "supertest": "^1.2.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
