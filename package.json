@@ -7,6 +7,7 @@
     "test": "mocha --compilers js:babel-register --recursive app/test/",
     "test:watch": "npm test -- --watch",
     "start": "webpack-dev-server",
+    "build": "webpack",
     "lint": "eslint --ext .js --ext .jsx ."
   },
   "author": "",

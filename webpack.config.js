@@ -5,10 +5,20 @@ const globalDefinePlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
   __PRODUCTION__: JSON.stringify(JSON.parse(process.env.BUILD_PRODUCTION || 'false')),
 });
-const globalCommonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+// remove commmon and use vender to split commmon js
+const globalCommonsPlugin = new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js');
 
 const config = {
-  entry: ['webpack-dev-server/client?http://localhost:8080/', 'webpack/hot/dev-server', './app/App.jsx'],
+  entry: {
+    main: ['./app/App.jsx'],
+    dev: ['webpack-dev-server/client?http://localhost:8080/', 'webpack/hot/dev-server'],
+    vendor: [
+      'react',
+      'react-router',
+      'redux',
+      'react-dom',
+    ],
+  },
   devServer: {
     contentBase: './app/build',
 
@@ -49,8 +59,8 @@ const config = {
   },
   plugins: [
     globalDefinePlugin,
-    globalCommonsPlugin,
     new webpack.HotModuleReplacementPlugin(),
+    globalCommonsPlugin,
     new webpack.NoErrorsPlugin(),
   ],
 };
